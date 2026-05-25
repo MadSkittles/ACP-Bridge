@@ -1,0 +1,38 @@
+[project]
+name = "acp-bridge"
+version = "0.1.0"
+description = "Bridge local MCP clients to remote CLI agents through a relay."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.2.0",
+    "pydantic>=2.7",
+    "pyyaml>=6.0",
+    "typer>=0.12",
+    "uvicorn>=0.30",
+    "websockets>=12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2",
+    "pytest-asyncio>=0.23",
+]
+
+[project.scripts]
+acp-bridge = "acp_bridge.cli:app"
+acp-bridge-mcp = "acp_bridge.mcp_server:main"
+acp-bridge-relay = "acp_bridge.relay:main"
+acp-bridge-worker = "acp_bridge.worker:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

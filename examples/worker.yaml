@@ -1,0 +1,26 @@
+relay_url: ws://relay.example.com:8765
+token: change-me
+devbox_id: win-dev
+allowed_workspaces:
+  - C:\Users\dev\repo
+default_timeout_sec: 1800
+max_concurrent_runs: 1
+agent_profiles:
+  codex:
+    executable: codex
+    args:
+      - exec
+      - --cd
+      - "{cwd}"
+      - --ask-for-approval
+      - never
+      - --sandbox
+      - danger-full-access
+      - "{prompt}"
+  claude:
+    executable: claude
+    args:
+      - --print
+      - --permission-mode
+      - bypassPermissions
+      - "{prompt}"

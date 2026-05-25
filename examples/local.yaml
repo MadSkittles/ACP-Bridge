@@ -1,0 +1,6 @@
+relay_url: ws://relay.example.com:8765
+token: change-me
+default_devbox_id: win-dev
+default_agent: codex
+cwd_map:
+  win-dev: C:\Users\dev\repo
