@@ -3,6 +3,7 @@ name = "acp-bridge"
 version = "0.1.0"
 description = "Bridge local MCP clients to remote CLI agents through a relay."
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.11"
 dependencies = [
     "mcp>=1.2.0",
